@@ -2,6 +2,8 @@
 
 ## 1-backup-all-routetables.sh
 
+![](./img/1-backup-all-routetables.png)
+
 1. [Open Azure Shell](https://shell.azure.com/)
 2. Download the script
 
@@ -12,9 +14,9 @@ cd ./az-route-tables
 ./1-backup-all-routetables.sh Network
 ```
 
-![](./img/1-backup-all-routetables.png)
-
 ## 2-fixed-nexthop.sh
+
+![](./img/2-fixed-nexthop.png)
 
 1. [Open Azure Shell](https://shell.azure.com/)
 2. Download the script
