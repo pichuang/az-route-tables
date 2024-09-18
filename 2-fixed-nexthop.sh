@@ -2,8 +2,13 @@
 
 RESOURCE_GROUP_NAME="Network"
 ROUTE_TABLE_NAME="sdwan" # Change this to your route table name
-ORIGINAL_NEXT_HOP_IP="10.250.255.4" # 10.250.255.4
+ORIGINAL_NEXT_HOP_IP="10.250.255.4"
 NEW_NEXT_HOP_IP="1.1.1.1"
+
+
+
+
+# Do not change below this line
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 
 # Fetch the route table and save it to a file
