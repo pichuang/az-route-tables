@@ -1,9 +1,9 @@
 #!/bin/bash
 
 RESOURCE_GROUP_NAME="Network"
-ROUTE_TABLE_NAME="sdwan"
-ORIGINAL_NEXT_HOP_IP="2.2.2.2" # 10.250.255.4
-NEW_NEXT_HOP_IP="10.250.255.4"
+ROUTE_TABLE_NAME="sdwan" # Change this to your route table name
+ORIGINAL_NEXT_HOP_IP="10.250.255.4" # 10.250.255.4
+NEW_NEXT_HOP_IP="1.1.1.1"
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 
 # Fetch the route table and save it to a file
