@@ -3,7 +3,7 @@
 RESOURCE_GROUP_NAME="Network"
 ROUTE_TABLE_NAME="sdwan" # Change this to your route table name
 ORIGINAL_NEXT_HOP_IP="10.250.255.4"
-NEW_NEXT_HOP_IP="1.1.1.1"
+NEW_NEXT_HOP_IP="10.255.248.132"
 
 
 
@@ -81,5 +81,37 @@ while IFS=$'\t' read -r _ name nextHopIpAddress nextHopType; do
 
 done < fix-${ROUTE_TABLE_NAME}-${TIMESTAMP}-replaced.tsv
 
+echo "======================================================"
+echo "Add 10.0.0.0/8 172.17.0.0/16 192.168.223.0/24 100.64.0.0/10 route to the new next hop IP"
+echo "======================================================"
+az network route-table route create \
+    -g ${RESOURCE_GROUP_NAME} \
+    --route-table-name ${ROUTE_TABLE_NAME} \
+    --name route-to-10.0.0.0_8 \
+    --next-hop-type VirtualAppliance \
+    --address-prefix 10.0.0.0/8 \
+    --next-hop-ip-address ${NEW_NEXT_HOP_IP}
 
+az network route-table route create \
+    -g ${RESOURCE_GROUP_NAME} \
+    --route-table-name ${ROUTE_TABLE_NAME} \
+    --name route-to-172.17.0.0_16 \
+    --next-hop-type VirtualAppliance \
+    --address-prefix 172.17.0.0/16 \
+    --next-hop-ip-address ${NEW_NEXT_HOP_IP}
 
+az network route-table route create \
+    -g ${RESOURCE_GROUP_NAME} \
+    --route-table-name ${ROUTE_TABLE_NAME} \
+    --name route-to-192.168.223.0_24 \
+    --next-hop-type VirtualAppliance \
+    --address-prefix 192.168.223.0/24 \
+    --next-hop-ip-address ${NEW_NEXT_HOP_IP}
+
+az network route-table route create \
+    -g ${RESOURCE_GROUP_NAME} \
+    --route-table-name ${ROUTE_TABLE_NAME} \
+    --name route-to-100.64.0.0_10 \
+    --next-hop-type VirtualAppliance \
+    --address-prefix 100.64.0.0/10 \
+    --next-hop-ip-address ${NEW_NEXT_HOP_IP}
