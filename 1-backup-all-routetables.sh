@@ -3,7 +3,8 @@
 # Show usage
 if [ "$#" -ne 1 ]; then
     echo "Backup all route tables in the specific resource group"
-    echo "Usage: $0 <resource_group_name>"
+    echo "Usage: ./1-backup-all-routetables.sh <resource_group_name>"
+    echo "Example: ./1-backup-all-routetables.sh Network"
     exit 1
 fi
 
