@@ -16,6 +16,8 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
+ROUTE_TABLE_NAME=$1
+
 # Do not change below this line
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 
