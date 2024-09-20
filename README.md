@@ -25,7 +25,6 @@ cd ./az-route-tables
 az account set --subscription subscription-sandbox-any-projects
 git clone https://github.com/pichuang/az-route-tables/
 cd ./az-route-tables
-
-# Change the 2-fixed-nexthop.sh
+./2-fixed-nexthop.sh Test_sdwan
 ```
 
