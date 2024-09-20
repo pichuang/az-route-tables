@@ -1,12 +1,20 @@
 #!/bin/bash
 
+#
+# Global variables
+#
 RESOURCE_GROUP_NAME="Network"
-ROUTE_TABLE_NAME="sdwan" # Change this to your route table name
+# ROUTE_TABLE_NAME="sdwan" # Change this to your route table name
 ORIGINAL_NEXT_HOP_IP="10.250.255.4"
 NEW_NEXT_HOP_IP="10.255.248.132"
 
-
-
+# Show usage
+if [ "$#" -ne 1 ]; then
+    echo "Fix the next hop IP address in the specific route table"
+    echo "Usage: ./2-fixed-nexthop.sh <ROUTE_TABLE_NAME>"
+    echo "Example: ./2-fixed-nexthop.sh sdwan"
+    exit 1
+fi
 
 # Do not change below this line
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
