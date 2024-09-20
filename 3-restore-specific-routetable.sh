@@ -26,6 +26,16 @@ while IFS=$'\t' read -r col1 col2 col3 col4; do
     echo "NextHopIpAddress: ${col4}"
     echo "===================="
 
+    if [ "$col3" == "Internet" ]; then
+        az network route-table route update \
+            --resource-group ${RESOURCE_GROUP_NAME} \
+            --route-table-name ${ROUTE_TABLE_NAME} \
+            --name ${col1} \
+            --address-prefix ${col2} \
+            --next-hop-type ${col3}
+        continue
+    fi
+
     az network route-table route update \
         --resource-group ${RESOURCE_GROUP_NAME} \
         --route-table-name ${ROUTE_TABLE_NAME} \
