@@ -27,7 +27,7 @@ while IFS=$'\t' read -r col1 col2 col3 col4; do
     echo "===================="
 
     if [ "$col3" == "Internet" ]; then
-        az network route-table route update \
+        az network route-table route create \
             --resource-group ${RESOURCE_GROUP_NAME} \
             --route-table-name ${ROUTE_TABLE_NAME} \
             --name ${col1} \
@@ -36,7 +36,7 @@ while IFS=$'\t' read -r col1 col2 col3 col4; do
         continue
     fi
 
-    az network route-table route update \
+    az network route-table route create \
         --resource-group ${RESOURCE_GROUP_NAME} \
         --route-table-name ${ROUTE_TABLE_NAME} \
         --name ${col1} \
