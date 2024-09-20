@@ -28,3 +28,11 @@ cd ./az-route-tables
 ./2-fixed-nexthop.sh Test_sdwan
 ```
 
+## 3-restore-specific-routetable.sh
+
+```bash
+az account set --subscription subscription-sandbox-any-projects
+git clone https://github.com/pichuang/az-route-tables/
+cd ./az-route-tables
+./3-restore-specific-routetable.sh backup-routetables-Network-20240920-134503/sdwan-20240920-134503.tsv
+```
