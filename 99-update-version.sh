@@ -1,3 +1,6 @@
 #!/bin/bash
 
-git pull --force
+git fetch
+git reset --hard HEAD
+git merge origin/master
+
