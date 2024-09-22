@@ -3,7 +3,7 @@
 #
 # Global variables
 #
-RESOURCE_GROUP_NAME="Network"
+RESOURCE_GROUP_NAME="Global"
 # ROUTE_TABLE_NAME="sdwan" # Change this to your route table name
 ORIGINAL_NEXT_HOP_IP="10.250.255.4"
 NEW_NEXT_HOP_IP="10.255.248.132"
