@@ -2,5 +2,5 @@
 
 git fetch
 git reset --hard HEAD
-git merge origin/master
+git merge origin/main
 
