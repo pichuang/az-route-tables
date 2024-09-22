@@ -37,3 +37,5 @@ echo "Zip all backup files - Start"
 zip -r ${ROOT_DIR}.zip ${ROOT_DIR}
 echo "Zip all backup files in ${ROOT_DIR}.zip - Done"
 echo "Backup all route tables in the resource group: ${RESOURCE_GROUP_NAME} - Done"
+echo
+echo "Please download the az-route-tables/${ROOT_DIR}.zip via Managed Files > Download"
